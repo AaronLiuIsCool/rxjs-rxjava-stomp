@@ -1,0 +1,62 @@
+group 'com.central1.javarx'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    // unit test
+    testCompile("junit:junit")
+
+    // RxJava
+    compile("io.reactivex.rxjava2:rxjava:2.1.6")
+
+    // spring libraries
+    compile("org.springframework.security:spring-security-core")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+
+    // spring boot web socket
+    compile("org.springframework.boot:spring-boot-starter-websocket")
+
+    // RxJs libraries
+    compile("org.webjars:webjars-locator")
+    compile("org.webjars:sockjs-client:1.0.2")
+    compile("org.webjars:stomp-websocket:2.3.3")
+    compile("org.webjars:bootstrap:3.3.7")
+    compile("org.webjars:jquery:3.1.0")
+
+    // Collection libraries
+    compile("com.google.collections:google-collections:1.0")
+    compile("org.apache.commons:commons-lang3")
+
+}
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.8.RELEASE")
+    }
+}
+
+
+jar {
+    baseName = 'rxjs-rxjava-spring-boot'
+    version = '0.1.0'
+}
+
+
+
